@@ -14,3 +14,12 @@
 .button:disabled {
   @apply bg-purple-500;
 }
+
+.button-black {
+  @apply bg-black font-bold p-5 px-10 rounded-3xl m-5 justify-items-center;
+}
+
+.button-black:hover,
+.button-black:disabled {
+  @apply bg-gray-900;
+}

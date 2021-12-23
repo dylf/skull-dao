@@ -48,14 +48,19 @@ const Home: NextPage = () => {
         Welcome to SkullDAO
         <IoSkullOutline className="ml-5" />
       </h1>
-      {!address && <ConnectWallet />}
-      {address && !hasClaimedNft && (
+      {error && error.name === 'UnsupportedChainIdError' && (
+        <div className="mt-20 bg-red-500 w-3/4 rounded-lg text-xl text-center">
+          Unsupported network please connect to Rinkeby!
+        </div>
+      )}
+      {!error && !address && <ConnectWallet />}
+      {!error && address && !hasClaimedNft && (
         <MintButton
           setHasClaimedNft={setHasClaimedNft}
           bundleDropModule={bundleDropModule}
         />
       )}
-      {hasClaimedNft && (
+      {!error && hasClaimedNft && (
         <Link href="/dashboard">
           <a className="button">Go to dashboard</a>
         </Link>

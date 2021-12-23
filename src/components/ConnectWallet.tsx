@@ -9,7 +9,7 @@ function ConnectWallet() {
       className="button inline-flex"
     >
       Connect your wallet
-      <IoWalletOutline className="w-6 h-6 " />
+      <IoWalletOutline className="w-6 h-6 ml-3" />
     </button>
   );
 }

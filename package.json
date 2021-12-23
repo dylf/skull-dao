@@ -8,7 +8,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "init-sdk": "ts-node scripts/1-initialize-sdk.ts",
+    "deploy-drop": "ts-node scripts/2-deploy-drop.ts",
+    "config-nft": "ts-node scripts/3-config-nft.ts",
+    "set-claim-condition": "ts-node scripts/4-set-claim-condition.ts",
+    "deploy-token": "ts-node scripts/5-deploy-token.ts",
+    "print-money": "ts-node scripts/6-print-money.ts",
+    "airdrop-token": "ts-node scripts/7-airdrop-token.ts",
+    "deploy-vote": "ts-node scripts/8-deploy-vote.ts",
+    "setup-vote": "ts-node scripts/9-setup-vote.ts",
+    "create-proposals": "ts-node scripts/10-create-vote-proposals.ts"
   },
   "dependencies": {
     "@3rdweb/hooks": "^1.6.0",
