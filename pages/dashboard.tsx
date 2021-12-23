@@ -2,6 +2,7 @@ import { useWeb3 } from '@3rdweb/hooks';
 import { ThirdwebSDK } from '@3rdweb/sdk';
 import { ethers } from 'ethers';
 import type { NextPage } from 'next';
+import Router from 'next/router';
 import Head from 'next/head';
 import { useEffect, useMemo, useState } from 'react';
 import { IoSkullOutline } from 'react-icons/io5';
@@ -69,7 +70,7 @@ const Dashboard: NextPage = () => {
 
   useEffect(() => {
     if (!address) {
-      // Redirect
+      Router.push('/');
       return;
     }
 
@@ -77,11 +78,12 @@ const Dashboard: NextPage = () => {
       .balanceOf(address, '0')
       .then((balance) => {
         if (!balance.gt(0)) {
-          //Redirect;
+          Router.push('/');
         }
       })
       .catch((err) => {
-        // Redirect
+        Router.push('/');
+
         console.error('failed to find nft balance', err);
       });
   }, [address]);
