@@ -183,7 +183,7 @@ const Dashboard: NextPage = () => {
               proposal.votes.forEach((vote) => {
                 const elem = document.getElementById(
                   proposal.proposalId + '-' + vote.type,
-                );
+                ) as HTMLInputElement;
 
                 if (elem.checked) {
                   voteResult.vote = vote.type;
